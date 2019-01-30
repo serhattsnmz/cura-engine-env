@@ -16,8 +16,8 @@ ADD printer-settings/ /printer-settings
 # Install Protobuf
 
 WORKDIR /cura/protobuf
-RUN ./autogen.sh
-RUN ./configure
+RUN chmod +x ./autogen.sh && ./autogen.sh
+RUN chmod +x ./configure && ./configure
 RUN make
 RUN make install
 RUN ldconfig
