@@ -68,7 +68,7 @@ $ make install
 ## Running
 
 > **NOTE**  
-> All printer default settings are hosted in `/printer-settings` folder, which is equal to [Cura Definitons](https://github.com/Ultimaker/Cura/tree/master/resources/definitions)
+> All printer default settings are hosted in `/printer-settings` folder, which is equal to [Cura Definitions Folder](https://github.com/Ultimaker/Cura/tree/master/resources/definitions)
 
 ```
 WITH DOCKER:
