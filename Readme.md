@@ -16,7 +16,7 @@ $ docker pull serhattsnmz/cura-engine-env
 ## Install with Dockerfile
 
 ```
-$ git clone git@github.com:serhattsnmz/cura-engine-env.git
+$ git clone https://github.com/serhattsnmz/cura-engine-env.git
 $ cd cura-engine-env
 $ docker build -t cura-engine-env .
 $ docker run -it --name cura-engine cura-engine-env
@@ -67,8 +67,22 @@ $ make install
 
 ## Running
 
-All printer settings are hosted in `/printer-settings` folder.
+> **NOTE**  
+> All printer default settings are hosted in `/printer-settings` folder, which is equal to [Cura Definitons](https://github.com/Ultimaker/Cura/tree/master/resources/definitions)
 
 ```
-CuraEngine slice -v -j /printer-settings/ultimaker3.def.json -o "/output/test.gcode" -s infill_line_distance=0 -l "/model_1.stl"
+WITH DOCKER:
+$ docker run --rm serhattsnmz/cura-engine-env \
+    CuraEngine slice -v \
+    -j /printer-settings/ultimaker3.def.json \
+    -o "/test.gcode" \
+    -s infill_line_distance=0 \
+    -l "/model_1.stl"
+
+ON LINUX:
+$ CuraEngine slice -v \
+    -j /printer-settings/ultimaker3.def.json \
+    -o "/test.gcode" \
+    -s infill_line_distance=0 \
+    -l "/model_1.stl"
 ```
